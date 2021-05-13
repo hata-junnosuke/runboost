@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Runboost</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <div class="notification is-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+   <% if flash[:alert] %>
+      <div class="notification is-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+    
+  <nav class="navbar navbar-inverse">
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="/">
+           <span class="fas fa-bolt"></span> run boost
+          </a>
+          <li><%= link_to "計　画", users_path, class: "button is-warning is-light" %></li>
+          <li><%= link_to "ライバル一覧", users_path, class: "button is-warning is-light" %></li>
+          
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+         <% if user_signed_in? %>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %></li>
+         <% else %>  
+          <li><%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %></li>
+          <li><%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %></li>
+         <% end %>  
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+    
+    <%= yield %>
+  </body>
+</html>
