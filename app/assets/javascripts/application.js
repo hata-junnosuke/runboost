@@ -16,5 +16,8 @@
 
 //= require bootstrap-sprockets
 //= require moment 
-//= require fullcalendar 
+//= require fullcalendar
+//= require chartkick
+//= require Chart.bundle
+
 //= require_tree .
