@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   def index
-    @blogs = Blog.all
+    @blogs = current_user.blogs
   end
 
   def new
@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    Blog.create(blog_parameter)
+    current_user.blogs.create(blog_parameter)
     redirect_to blogs_path
   end
 
