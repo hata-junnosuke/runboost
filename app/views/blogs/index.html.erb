@@ -7,7 +7,6 @@
     <tr>
       <th>メニュー</th>
       <th>距離</th>
-      <th>総距離</th>
       <th>時間</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +17,6 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.distance %></td>
-        <td><%= Blog.all.sum(:distance) %></td>
         <td><%= blog.start_time.strftime("%Y-%m-%d %H:%M") %></td>
         <td><%= link_to '詳細', blog_path(blog.id) %></td>
         <td><%= link_to '編集', edit_blog_path(blog.id) %></td>
@@ -42,5 +40,5 @@
   <% end %>
 <% end %>
 
-<%= bar_chart @blogs.group_by_month(:start_time).sum(:distance), width: "1500px", height: "300px" %>
+<%= bar_chart @blogs.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px" %>
   
