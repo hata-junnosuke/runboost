@@ -60,8 +60,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap-sass'
-gem 'jquery-rails'
+
 gem 'coffee-script-source', '1.8.0'
 
 gem 'devise'
@@ -74,3 +73,6 @@ gem 'momentjs-rails'
 gem 'simple_calendar', '~> 2.0'
 gem 'chartkick'
 gem 'groupdate'
+
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'

@@ -14,10 +14,12 @@
 //= require activestorage
 //= require turbolinks
 
-//= require bootstrap-sprockets
+
 //= require moment 
 //= require fullcalendar
 //= require chartkick
 //= require Chart.bundle
-
+//= require jquery3
+//= require popper
+//= require bootstrap
 //= require_tree .

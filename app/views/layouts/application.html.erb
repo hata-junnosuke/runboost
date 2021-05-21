@@ -17,39 +17,38 @@
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
-
-   <% if flash[:alert] %>
+    
+  　<% if flash[:alert] %>
       <div class="notification is-danger">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-
     
-  <nav class="navbar navbar-inverse">
-    
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <a class="navbar-brand" href="/blogs">
-           <span class="fas fa-bolt"></span> run boost
-          </a>
-          <li><%= link_to "計　画", blogs_path, class: "button is-warning is-light" %></li>
-          <li><%= link_to "ランナー一覧", users_path, class: "button is-warning is-light" %></li>
-          
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/blogs">
+        <span class="fas fa-bolt"></span> run boost
+    　</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/blogs">計　画</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">ランナー一覧</a>
+          </li>
         </ul>
-        
-        <ul class="nav navbar-nav navbar-right">
-         <% if user_signed_in? %>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %></li>
-         <% else %>  
-          <li><%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %></li>
-          <li><%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %></li>
-         <% end %>  
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-    
+        <form class="navbar-nav">
+          <% if user_signed_in? %>
+            <a class="nav-link" href="/users/sign_out" data-method="delete">ログアウト</a>
+          <% else %>  
+            <a class="nav-link" href=" /users/sign_up" >新規登録</a>
+            <a class="nav-link" href=" /users/sign_in" >ログイン</a>
+          <% end %>   
+        </form>
+      </div>
+    </nav>
+      
     <%= yield %>
+    
   </body>
-</html>
+  </html>
