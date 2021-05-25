@@ -3,16 +3,16 @@ class ApplicationController < ActionController::Base
   
   def forbid_login_user
     flash[:notice] = "既にログインしてます。"
-    redirect_to("/home/top")
+    redirect_to("/")
   end
   
   def after_sign_in_path_for(resource) 
-    home_top_path
+    root_path
   end
   
   
   def after_log_in_path_for(resource) 
-    home_top_path
+    root_path
   end
   
   private

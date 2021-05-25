@@ -25,27 +25,40 @@
     <% end %>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="home/top">
-        <span class="fas fa-bolt"></span> run boost
-    　</a>
+
+      <a class="navbar-brand" href=<%= root_path %>>
+        <span class="fas fa-bolt"></span>
+        runboost
+      </a>
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="home/top">マイページ</a>
+            <%= link_to "マイページ", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/blogs">計　画</a>
+            <%= link_to "計　画",blogs_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users">ランナー一覧</a>
+            <%= link_to "ランナー一覧", users_path, class: "nav-link" %>
           </li>
         </ul>
         <form class="navbar-nav">
           <% if user_signed_in? %>
-            <a class="nav-link" href="/users/sign_out" data-method="delete">ログアウト</a>
-          <% else %>  
-            <a class="nav-link" href=" /users/sign_up" >新規登録</a>
-            <a class="nav-link" href=" /users/sign_in" >ログイン</a>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            </ul>  
+          <% else %>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+              </li>
+              <li>
+                <%= link_to "ログイン", user_session_path, class: "nav-link" %>
+              </li>
+            </ul>  
           <% end %>   
         </form>
       </div>
