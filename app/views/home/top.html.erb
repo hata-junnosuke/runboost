@@ -13,7 +13,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 今月の距離</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @blogs.sum(:distance) %></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-running fa-2x text-gray-300"></i>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">1000</div>
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%= @blogs.sum(:distance) %></div>
                                     </div>
                                     <div class="col">
                                         <div class="progress progress-sm mr-2">
@@ -151,6 +151,25 @@
                     <h6 class="m-0 font-weight-bold text-primary">過去の記録</h6>
                 </div>
                 <div class="card-body">
+                　<p>月　間</p>
+                  <%= bar_chart @blogs.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px",  colors: ["#3300FF"] %>
+                  <p>年　間</p>
+                  <%= bar_chart @blogs.group_by_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "100px" , colors: ["#339933"]%>
+                 
+                </div>
+              </div>
+            </div>
+          </div>  
+        <!-- Content Row -->
+          <div class="row">
+            <!-- Content Column -->
+            <div class="col-lg-12 mb-4">
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">過去の記録</h6>
+                </div>
+                <div class="card-body">
                   <h4 class="small font-weight-bold">今　月<span
                           class="float-right"><%= @blogs.sum(:distance) %>Km</span></h4>
                   <div class="progress mb-4">
@@ -174,6 +193,7 @@
               </div>
             </div>
           </div>  
+        
         <!-- /.container-fluid -->
         </div>
       <!-- End of Main Content -->
