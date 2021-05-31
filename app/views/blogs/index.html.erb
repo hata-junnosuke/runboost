@@ -40,5 +40,4 @@
   <% end %>
 <% end %>
 
-<%= bar_chart @blogs.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px" %>
-  
+<%= bar_chart @blogs.this_month.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px", colors: ["#0099FF"] %>

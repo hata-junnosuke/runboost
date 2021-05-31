@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   
   def top
     @blogs = current_user.blogs
+    @users = current_user
   end
 end

@@ -13,7 +13,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 今月の距離</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @blogs.this_month.sum(:distance) %>Km</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-running fa-2x text-gray-300"></i>
@@ -49,14 +49,7 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%= @blogs.sum(:distance) %></div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="progress progress-sm mr-2">
-                                            <div class="progress-bar bg-info" role="progressbar"
-                                                style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
-                                        </div>
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%= @blogs.sum(:distance) %>Km</div>
                                     </div>
                                 </div>
                             </div>
@@ -93,25 +86,29 @@
                 <div
                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">プロフィール</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                            aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
+                    <%= link_to "編　集", edit_user_path(current_user), class: "btn btn-primary" %>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
-                      
+                        
+                        <%= attachment_image_tag @users, :profie_image, fallback: "no-image.png", class: "card-img-top" %>
+                      <hr>
+                      <div class="content">
+                        <p class="text-center text-bold text-large"><%= current_user.username %></p>
+                      </div>
+                      <hr>
+                      <div class="content">
+                        <p class="text-bold text-large text-ornament">自己紹介</p>
+                        <br>
+                        <p class="text-center">profile</p>
+                      </div>
+                      <hr>
+                      <div class="content">
+                        <p class="text-bold text-large text-ornament">目　標</p>
+                        <br>
+                        <p class="text-center">goal</p>
+                      </div>
                     </div>
                 </div>
               </div>
@@ -152,47 +149,15 @@
                 </div>
                 <div class="card-body">
                 　<p>月　間</p>
-                  <%= bar_chart @blogs.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px",  colors: ["#3300FF"] %>
+                  <%= bar_chart @blogs.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "400px", colors: ["#0099FF"] %>
                   <p>年　間</p>
-                  <%= bar_chart @blogs.group_by_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "100px" , colors: ["#339933"]%>
+                  <%= bar_chart @blogs.this_year.group_by_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "100px" , colors: ["blue"]%>
                  
                 </div>
               </div>
             </div>
           </div>  
-        <!-- Content Row -->
-          <div class="row">
-            <!-- Content Column -->
-            <div class="col-lg-12 mb-4">
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">過去の記録</h6>
-                </div>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold">今　月<span
-                          class="float-right"><%= @blogs.sum(:distance) %>Km</span></h4>
-                  <div class="progress mb-4">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width:<%= @blogs.sum(:distance) %>%"
-                          aria-valuenow="20" aria-valuemin="0" aria-valuemax="200"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">先　月<span
-                          class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">年　間<span
-                          class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                      <div class="progress-bar" role="progressbar" style="width: 60%"
-                          aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                 
-                </div>
-              </div>
-            </div>
-          </div>  
+        
         
         <!-- /.container-fluid -->
         </div>

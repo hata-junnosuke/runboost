@@ -1,14 +1,30 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p> 
-
-<%= form_for @user do |f| %>
-
-<%= f.label :username %>
-<%= f.text_field :username %>
-
-<%= f.label :email %>
-<%= f.text_field :email %>
-
-<%= f.submit "更新" %>
-
-<% end %>
+<div class="container">
+    <div class="text-center">
+      <%= form_for @user do |f| %>
+        <div class="field">
+          <%= f.label :username %><br>
+          <%= f.text_field :username %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>  
+        <div class="field">
+          <%= f.label :profile %><br>
+          <%= f.text_field :profile %>
+        </div>  
+        <div class="field">
+          <%= f.label :profie_image %><br>
+          <%= f.attachment_field :profie_image %>
+        </div>  
+        
+        
+        <div class="field">
+          <%= f.submit "更新" %>
+        </div>  
+        
+      <% end %>
+    </div>
+  </div>  
