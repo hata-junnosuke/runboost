@@ -13,7 +13,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 今月の距離</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @blogs.this_month.sum(:distance) %>Km</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.this_month.sum(:distance) %>Km</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-running fa-2x text-gray-300"></i>
@@ -30,7 +30,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     今月の目標距離</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= current_user.goal %></div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -45,13 +45,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">年間走行距離
-                                </div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%= @blogs.sum(:distance) %>Km</div>
-                                    </div>
-                                </div>
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">年間走行距離</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.sum(:distance) %>Km</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -107,7 +102,7 @@
                       <div class="content">
                         <p class="text-bold text-large text-ornament">目　標</p>
                         <br>
-                        <p class="text-center">goal</p>
+                        <p class="text-center"><%= current_user.goal %></p>
                       </div>
                     </div>
                 </div>
