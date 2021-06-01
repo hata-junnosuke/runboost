@@ -2,9 +2,7 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    
     @blogs = current_user.blogs
-    
   end
 
   def new
@@ -42,7 +40,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_parameter
-    params.require(:blog).permit(:title, :content, :distance, :start_time)
+    params.require(:blog).permit(:title, :content, :distance, :start_time, :goal)
   end
 
 end

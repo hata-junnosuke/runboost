@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :blogs
   
   attachment :profie_image
+  
 end
