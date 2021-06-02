@@ -20,10 +20,7 @@
     <%= form.datetime_select :start_time %>
   </div>
   
-   <div class="goal">
-    <%= form.label :goal %>
-    <%= form.number_field :goal %>
-  </div>
+ 
 
   
 
@@ -32,4 +29,16 @@
     <%= form.submit %>
   </div>
 
+<% end %>
+
+<%= form_with(model: @goal, local: true) do |form| %>
+  <div class="goal">
+    <%= form.label :goal %>
+    <%= form.number_field :goal %>
+  </div>
+  
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+  
 <% end %>

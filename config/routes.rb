@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "home#top"
   devise_for :users
   
@@ -6,4 +7,5 @@ Rails.application.routes.draw do
   resources :events
   get 'my_calendar', to: 'events#my_calendar'
   resources :blogs
+  resources :goals
 end
