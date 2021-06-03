@@ -12,7 +12,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    Goal.create(goal_params)
+    current_user.goals.build(goal_params).save
     redirect_to goals_path
   end
 
