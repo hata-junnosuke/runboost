@@ -11,37 +11,33 @@
 <%= link_to "編集", edit_user_path(@user) %>
 <% end %>
 
-<%= form_with(model: @goal, local: true) do |form| %>
-  <div class="goal">
-    <%= form.label :goal %>
-    <%= form.number_field :goal %>
-  </div>
-  
-  <div class="submit">
-    <%= form.submit %>
-  </div>
-  
-<% end %>
-
-
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>月間</th>
+      <th>走行距離</th>
+      <th>走行目標</th>
+      <th>達成度</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row">今月</th>
+      <td><%= @blog.this_month.sum(:distance) %></td>
+      <td><%= @goal.this_month.last.distance %></td>
+      <td><%= @blog.this_month.sum(:distance) * 100 / @goal.this_month.last.distance %>  %</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
+      <th scope="row">先月</th>
+      <td><%= @blog.last_month.sum(:distance) %></td>
+      <td><%= @goal.last_month.last.distance %></td>
+      <td><%= @blog.last_month.sum(:distance) * 100  / @goal.last_month.last.distance %> %</td>
+    </tr>
+    <tr>
+      <th scope="row">先々月</th>
+      <td><%= @blog.two_months_ago.sum(:distance) %></td>
+      <td><%= @goal.two_months_ago.last.distance %></td>
+      <td><%= @blog.two_months_ago.sum(:distance) * 100 / @goal.two_months_ago.last.distance %>  %</td>
     </tr>
   </tbody>
 </table>

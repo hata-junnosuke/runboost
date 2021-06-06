@@ -6,6 +6,11 @@
     <%= form.number_field :distance %>
   </div>
   
+   <div class="time">
+    <%= form.label :date %>
+    <%= form.date_select :date, { discard_day: true, use_month_numbers: true} %>
+  </div>
+  
   <div class="submit">
     <%= form.submit "更新" %>
   </div>

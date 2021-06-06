@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @blog = current_user.blogs
+    @goal = current_user.goals
   end
 
   def edit

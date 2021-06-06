@@ -2,6 +2,29 @@
 
 <h1>走りの記録</h1>
 
+
+<%= link_to '記録をかく', new_blog_path %>
+
+<%= month_calendar events: @blogs do |date, blogs| %>
+  <%= date.day %>
+
+  <% blogs.each do |blog| %>
+    <div>
+      <%= link_to blog.title, blog %>
+    </div>
+  <% end %>
+<% end %>
+
+<br>
+
+<h1>今月の距離</h1>
+
+<%= bar_chart @blogs.this_month.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px", colors: ["#0099FF"] %>
+
+<br>
+
+<h1>最新ログ</h1>
+
 <table>
   <thead>
     <tr>
@@ -27,17 +50,3 @@
 </table>
 
 <br>
-
-<%= link_to '記録をかく', new_blog_path %>
-
-<%= month_calendar events: @blogs do |date, blogs| %>
-  <%= date.day %>
-
-  <% blogs.each do |blog| %>
-    <div>
-      <%= link_to blog.title, blog %>
-    </div>
-  <% end %>
-<% end %>
-
-<%= bar_chart @blogs.this_month.group_by_month(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "200px", colors: ["#0099FF"] %>

@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   def top
     @blogs = current_user.blogs
     @users = current_user
-    @goals = current_user.goals
+    @goal = current_user.goals.this_month.last
   end
 end

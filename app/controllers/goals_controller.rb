@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
 
   def create
     current_user.goals.build(goal_params).save
-    redirect_to goals_path
+    redirect_to root_path
   end
 
   def destroy
