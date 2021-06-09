@@ -30,7 +30,13 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     今月の目標距離</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @goal.distance %> Km</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">
+                                  <% if @goal.present? %>
+                                    <p><%= @goal.this_month.last.distance %> Km<p> 
+                                  <% else %>
+                                    <p>目標を設定しましょう！</p>
+                                  <% end %>
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -102,7 +108,13 @@
                       <div class="content">
                         <p class="text-bold text-large text-ornament">目　標</p>
                         <br>
-                        <p class="text-center"><%= @goal.distance %>Km</p>
+                        <p class="text-center">
+                          <% if @goal.present? %>
+                            <%= @goal.this_month.last.distance %> Km 
+                          <% else %>
+                            目標を設定しましょう！
+                          <% end %>
+                        </p>  
                       </div>
                     </div>
                 </div>

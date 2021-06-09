@@ -24,20 +24,44 @@
     <tr>
       <th scope="row">今月</th>
       <td><%= @user.blogs.this_month.sum(:distance) %></td>
-      <td><%= @user.goals.this_month.last.distance %></td>
-      <td><%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>  %</td>
+      <% if @user.goals.present? %>
+        <td><%= @user.goals.this_month.last.distance %></td>
+      <% else %>
+        <td><p>未設定</p></td>
+      <% end %>
+      <% if @user.goals.present? %>
+        <td><%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>  %</td>
+      <% else %>
+       <td><p>判定できません</p></td>
+      <% end %>
     </tr>
     <tr>
       <th scope="row">先月</th>
       <td><%= @user.blogs.last_month.sum(:distance) %></td>
-      <td><%= @user.goals.last_month.last.distance %></td>
-      <td><%= @user.blogs.last_month.sum(:distance) * 100  /  @user.goals.last_month.last.distance %> %</td>
+      <% if @user.goals.nil? %>
+        <td><%= @user.goals.last_month.last.distance %></td>
+      <% else %>
+        <td><p>未設定</p></td>
+      <% end %>
+      <% if @user.goals.nil? %>
+        <td><%= @user.blogs.last_month.sum(:distance) * 100  /  @user.goals.last_month.last.distance %> %</td>
+      <% else %>
+       <td><p>判定できません</p></td>
+      <% end %>
     </tr>
     <tr>
       <th scope="row">先々月</th>
       <td><%= @user.blogs.two_months_ago.sum(:distance) %></td>
-      <td><%= @user.goals.two_months_ago.last.distance %></td>
-      <td><%= @user.blogs.two_months_ago.sum(:distance) * 100 /  @user.goals.two_months_ago.last.distance %>  %</td>
+      <% if @user.goals.nil? %>
+        <td><%= @user.goals.two_months_ago.last.distance %></td>
+      <% else %>
+        <td><p>未設定</p></td>
+      <% end %>
+      <% if @user.goals.nil? %>
+        <td><%= @user.blogs.two_months_ago.sum(:distance) * 100 /  @user.goals.two_months_ago.last.distance %>  %</td>
+      <% else %>
+        <td><p>判定できません</p></td>
+      <% end %>
     </tr>
   </tbody>
 </table>
