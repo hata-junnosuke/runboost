@@ -1,47 +1,42 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p> 
+<h1>プロフィール編集</h1>
+
 <div class="container">
     <div class="text-center">
       <%= form_for @user do |f| %>
         <div class="field">
-          <%= f.label :username %><br>
-          <%= f.text_field :username %>
-        </div>
-        <div class="field">
-          <%= f.label :email %><br>
-          <%= f.text_field :email %>
-        </div>  
-        <div class="field">
-          <%= f.label :profile %><br>
-          <%= f.text_field :profile %>
-        </div>  
-        <div class="field">
-          <%= f.label :profile_image %><br>
+          <%= f.label :アイコン %><br>
           <%= f.attachment_field :profie_image %>
         </div>
         
+        <br>
+        
         <div class="field">
-          <%= f.submit "更新" %>
+          <%= f.label :名　前 %><br>
+          <%= f.text_field :username %>
+        </div>
+        
+         <br>
+         
+        <div class="field">
+          <%= f.label :eメール %><br>
+          <%= f.text_field :email %>
+        </div> 
+        
+         <br>
+         
+        <div class="field">
+          <%= f.label :自己紹介 %><br>
+          <%= f.text_field :profile %>
+        </div>  
+       
+        <br>
+        
+        <div>
+          <%= f.submit "更新", class: "btn btn-primary" %>
         </div>  
         
       <% end %>
-      <%= form_with(model: Goal, local: true) do |form| %>
-        <div class="goal">
-          <%= form.label :goal %><br>
-          <%= form.number_field :distance %>
-        </div>
-        
-         <div class="time">
-          <%= form.label :date %><br>
-          <%= form.date_select :date, { discard_day: true, use_month_numbers: true} %>
-        </div>
-        
-        <div class="submit">
-          <%= form.submit "更新" %>
-        </div>
-        
-      <% end %>
-            
-     
     </div>
   </div>  

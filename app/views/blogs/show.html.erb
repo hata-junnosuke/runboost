@@ -1,21 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>タイトル</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>内容</strong>
+  <strong>メニュー</strong>
   <%= @blog.content %>
 </p>
+
+
 <p>
   <strong>距離</strong>
   <%= @blog.distance %>
 </p>
 <p>
   <strong>時間</strong>
-  <%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
+  <%= @blog.start_time.strftime("%Y-%m-%d") %>
+</p>
+
+<p>
+  <strong>コメント</strong>
+  <%= @blog.comment %>
 </p>
 
 

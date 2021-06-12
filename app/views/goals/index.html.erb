@@ -1,18 +1,30 @@
 <h1>Goals#index</h1>
 <p>Find me in app/views/goals/index.html.erb</p>
- <%= form_with(model: Goal, local: true) do |form| %>
-  <div class="goal">
-    <%= form.label :goal %>
-    <%= form.number_field :distance %>
+<div class="container">
+  <div class="text-center">
+    <h1>月間の目標を設定しましょう！</h1>
+    
+    <br>
+    
+    <%= form_with(model: Goal, local: true) do |form| %>
+     <div class="goal">
+       <%= form.label :目　標 %><br>
+       <%= form.number_field :distance %>
+     </div>
+     
+     <br>
+     
+      <div class="time">
+       <%= form.label :月　間 %><br>
+       <%= form.date_select :date, { discard_day: true, use_month_numbers: true} %>
+     </div>
+     
+     <br>
+     
+     <div class="submit">
+       <%= form.submit "目標を設定", class: "btn btn-primary" %>
+     </div>
+     
+    <% end %>
   </div>
-  
-   <div class="time">
-    <%= form.label :date %>
-    <%= form.date_select :date, { discard_day: true, use_month_numbers: true} %>
-  </div>
-  
-  <div class="submit">
-    <%= form.submit "更新" %>
-  </div>
-  
-<% end %>
+</div>

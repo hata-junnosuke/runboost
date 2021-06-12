@@ -125,7 +125,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">今月のワークアウト</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">ワークアウト</h6>
                     <%= link_to "編　集", blogs_path, class: "btn btn-primary" %>
                 </div>
                 <!-- Card Body -->
@@ -135,7 +135,7 @@
                         <%= date.day %>
                         <% blogs.each do |blog| %>
                           <div>
-                            <%= link_to blog.title, blog %>
+                            <%= link_to blog.content, blog %>
                           </div>
                         <% end %>
                       <% end %>
@@ -157,7 +157,7 @@
                 　<p>月　間</p>
                   <%= bar_chart @blogs.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "400px", colors: ["#0099FF"] %>
                   <p>年　間</p>
-                  <%= bar_chart @blogs.this_year.group_by_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "100px" , colors: ["blue"]%>
+                  <%= bar_chart @blogs.this_year.group_by_year(:start_time).sum(:distance), min: 0, max: 2000, width: "1500px", height: "100px" , colors: ["blue"]%>
                  
                 </div>
               </div>
