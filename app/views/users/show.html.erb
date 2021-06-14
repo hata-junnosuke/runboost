@@ -38,18 +38,13 @@
         </div>  
         <!-- Card Body -->
         <div class="card-body">
-          <%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
-          <hr>
-          <p class="text-bold text-large text-ornament">今月の目標</p>
+          <p class="text-bold text-large text-ornament">今月の達成度</p>
           <br>
-          <p class="text-center">
-            <% if @user.goals.present? %>
-              <td><%= @user.goals.this_month.last.distance %> Km</td>
-            <% else %>
-              <td><p>未設定</p></td>
-            <% end %>
-          </p>
-          <br>
+          <!-- 円グラフ　-->
+          <div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+            <div class="progress-value"><%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>%</div>
+          </div>
+          
           <hr>
           <div class="row justify-content-center">
             <% if @user.id == current_user.id %>
