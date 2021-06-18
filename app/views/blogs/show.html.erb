@@ -1,26 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>メニュー</strong>
-  <%= @blog.content %>
-</p>
-
-
-<p>
-  <strong>距離</strong>
-  <%= @blog.distance %>
-</p>
-<p>
-  <strong>時間</strong>
-  <%= @blog.start_time.strftime("%Y-%m-%d") %>
-</p>
-
-<p>
-  <strong>コメント</strong>
-  <%= @blog.comment %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<div class="container">
+  <div class="text-center">
+    <p>
+      <strong>時間</strong><br>
+      <%= @blog.start_time.strftime("%Y-%m-%d") %>
+    </p>
+    
+    <br>
+    
+    <p>
+      <strong>メニュー</strong><br>
+      <%= @blog.content %>
+    </p>
+    
+    <br>
+    
+    <p>
+      <strong>距離</strong><br>
+      <%= @blog.distance %>
+    </p>
+    
+    <br>
+    
+    <p>
+      <strong>コメント</strong><br>
+      <%= @blog.comment %>
+    </p>
+    <%= link_to 'Edit', edit_blog_path(@blog) %> |
+    <%= link_to 'Back', blogs_path %>
+  </div>
+</div>

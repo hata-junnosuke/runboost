@@ -1,5 +1,5 @@
 body {
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 .fa-bolt{
@@ -185,3 +185,21 @@ Due to the split circle of progress-left and progress right, we must use the ani
 	}
 }
 // 円グラフ終わり
+//フィードバック
+.notice {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  background-color: lightBlue;
+  height:50px;
+}
+
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  background-color: #dc3545;
+  height:50px;
+}

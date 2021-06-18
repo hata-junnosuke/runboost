@@ -1,30 +1,39 @@
-<%= form_with(model: @blog, local: true) do |form| %>
-
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+<div class="container">
+  <div class="text-center">
+    <%= form_with(model: @blog, local: true) do |form| %>
+    
+      <div class="time">
+        <%= form.label :日　時 %><br>
+        <%= form.date_select :start_time, { use_month_numbers: true}  %>
+      </div>
+      
+      <br>
+      
+      <div class="content">
+        <%= form.label :メニュー %><br>
+        <%= form.text_field :content %>
+      </div>
+      
+      <br>
+      
+      <div class="distance">
+        <%= form.label :距　離 %><br>
+        <%= form.number_field :distance %>
+      </div>
+      
+      <br>
+      
+      <div class="comment">
+        <%= form.label :コメント %><br>
+        <%= form.text_field :comment  %>
+      </div>
+      
+      <br>
+      
+      <div class="submit">
+        <%= form.submit"更新", class: "btn btn-lg btn-primary" %>
+      </div>
+    
+    <% end %>
   </div>
-  
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  
-  <div class="distance">
-    <%= form.label :distance %>
-    <%= form.number_field :distance %>
-  </div>
-  
-  <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
-
-  
-
-
-  <div class="submit">
-    <%= form.submit %>
-  </div>
-
-<% end %>
+</div>  
