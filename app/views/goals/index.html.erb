@@ -1,22 +1,25 @@
-<h1>Goals#index</h1>
-<p>Find me in app/views/goals/index.html.erb</p>
 <div class="container">
   <div class="text-center">
+    <h1><span class="fas fa-bolt"></span>
+        runboost
+　  </h1>
     <h1>月間の目標を設定しましょう！</h1>
     
     <br>
     
-    <%= form_with(model: Goal, local: true) do |form| %>
+    <%= form_with(model: Goal, local: true,html: { class: "form-signin" }) do |form| %>
      <div class="goal">
        <%= form.label :目　標 %><br>
-       <%= form.number_field :distance %>
+       <%= form.number_field :distance, autofocus: true, class: "form-control"  %>
      </div>
      
      <br>
      
       <div class="time">
        <%= form.label :月　間 %><br>
-       <%= form.date_select :date, { discard_day: true, use_month_numbers: true} %>
+       <div class="form-inline justify-content-center">
+           <%= form.date_select :date, { discard_day: true, use_month_numbers: true} ,autofocus: true, class: "form-control"  %>
+       </div>
      </div>
      
      <br>

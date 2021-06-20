@@ -69,7 +69,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                     トロフィー</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Coming Soon</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">Coming Soon</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-trophy fa-2x text-gray-300"></i>
@@ -93,7 +93,6 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
-                        
                         <%= attachment_image_tag @users, :profie_image, fallback: "no-image.png", class: "card-img-top" %>
                       <hr>
                       <div class="content">
@@ -107,7 +106,7 @@
                       </div>
                       <hr>
                       <div class="content">
-                        <p class="text-bold text-large text-ornament">目　標</p>
+                        <p class="text-bold text-large text-ornament">今月の目標</p>
                         <br>
                         <p class="text-center">
                           <% if @goal.present? %>
@@ -159,9 +158,10 @@
                     <h6 class="m-0 font-weight-bold text-primary">過去の記録</h6>
                 </div>
                 <div class="card-body">
-                　<p>月　間</p>
+                　<h1>月　間</h1>
                   <%= bar_chart @blogs.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "400px", colors: ["#0099FF"] %>
-                  <p>年　間</p>
+                  <br>
+                  <h1>年　間</h1>
                   <%= bar_chart @blogs.this_year.group_by_year(:start_time).sum(:distance), min: 0, max: 2000, width: "1500px", height: "100px" , colors: ["blue"]%>
                  
                 </div>

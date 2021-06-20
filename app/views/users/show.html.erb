@@ -36,23 +36,31 @@
         </div>  
         <!-- Card Body -->
         <div class="card-body">
+          
+                 
+               
+                  
           <p class="text-bold text-large text-ornament">今月の達成度</p>
           <br>
-          <!-- 円グラフ　-->
-          <div class="progress" data-percentage="<%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>">
-  		  　  <span class="progress-left">
-  			      <span class="progress-bar"></span>
-  	      	</span>
-  		      <span class="progress-right">
-  			      <span class="progress-bar"></span>
-  		      </span>
-  		      <div class="progress-value">
-  			      <div>
-  				      <%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %> %<br>
-  				    </div>
-  		      </div>
-  	       </div>
-  	       <!-- 円グラフ終わり　-->
+          <% if @user.goals.present? %>
+            <!-- 円グラフ　-->
+            <div class="progress" data-percentage="<%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>">
+    		  　  <span class="progress-left">
+    			      <span class="progress-bar"></span>
+    	      	</span>
+    		      <span class="progress-right">
+    			      <span class="progress-bar"></span>
+    		      </span>
+    		      <div class="progress-value">
+    			      <div>
+    				      <%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %> %<br>
+    				    </div>
+    		      </div>
+    	       </div>
+    	       <!-- 円グラフ終わり　-->
+  	       <% else %>
+  	         <h1 class="text-center">未設定</h1>
+           <% end %>
   	       <hr>
   	       <p class="text-bold text-large text-ornament">今月の目標距離</p><br>
   	      <p>
@@ -95,9 +103,9 @@
             <tbody>
               <tr>
                 <th scope="row">今月</th>
-                <td><%= @user.blogs.this_month.sum(:distance) %></td>
+                <td><%= @user.blogs.this_month.sum(:distance) %> Km</td>
                 <% if @user.goals.present? %>
-                  <td><%= @user.goals.this_month.last.distance %></td>
+                  <td><%= @user.goals.this_month.last.distance %> Km</td>
                 <% else %>
                   <td><p>未設定</p></td>
                 <% end %>
@@ -109,9 +117,9 @@
               </tr>
               <tr>
                 <th scope="row">先月</th>
-                <td><%= @user.blogs.last_month.sum(:distance) %></td>
+                <td><%= @user.blogs.last_month.sum(:distance) %> Km</td>
                 <% if @user.goals.nil? %>
-                  <td><%= @user.goals.last_month.last.distance %></td>
+                  <td><%= @user.goals.last_month.last.distance %> Km</td>
                 <% else %>
                   <td><p>未設定</p></td>
                 <% end %>
@@ -123,9 +131,9 @@
               </tr>
               <tr>
                 <th scope="row">先々月</th>
-                <td><%= @user.blogs.two_months_ago.sum(:distance) %></td>
+                <td><%= @user.blogs.two_months_ago.sum(:distance) %> Km</td>
                 <% if @user.goals.nil? %>
-                  <td><%= @user.goals.two_months_ago.last.distance %></td>
+                  <td><%= @user.goals.two_months_ago.last.distance %> Km</td>
                 <% else %>
                   <td><p>未設定</p></td>
                 <% end %>
