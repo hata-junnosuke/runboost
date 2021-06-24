@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :users
-  resources :events
-  get 'my_calendar', to: 'events#my_calendar'
+  delete 'destroy_user', to: 'users#destroy'
+  
   resources :blogs
   resources :goals
 end

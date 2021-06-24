@@ -34,9 +34,17 @@
         <br>
         
         <div>
-          <%= f.submit "更新", class: "btn btn-primary" %>
+          <%= f.submit "更　新", class: "btn btn-primary" %>
         </div>  
         
       <% end %>
+      
+      <br>
+      
+      <div>
+       <h3>退会される方はこちらのボタンを押してください。</h3>
+       <br>
+       <%= link_to '退　会', user_path(current_user), method: :delete, class: "btn btn-danger", data: { confirm: '削除しますか？' }  %>
+      </div>
     </div>
   </div>  
