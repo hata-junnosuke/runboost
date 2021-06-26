@@ -1,6 +1,36 @@
 body {
-    padding-top: 70px;
+    padding-top: 40px;
+  }
+ 
+.container{
+  padding: 20px;
+} 
+  
+.container_white{
+  margin-top: 100px;
+  padding-top: 20px;
+  background-color: white;
+  background-size: cover;
+  margin: 0 auto;
+  width: 500px;
+}  
+
+.container_user{
+  padding-top: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url("run.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
+
+.container-fluid{
+ margin-top: 40px;
+}
+
+
 
 .fa-bolt{
   color: blue;

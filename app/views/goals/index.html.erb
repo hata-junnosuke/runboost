@@ -1,9 +1,12 @@
 <div class="container">
   <div class="text-center">
-    <h1><span class="fas fa-bolt"></span>
-        runboost
-　  </h1>
-    <h1>月間の目標を設定しましょう！</h1>
+    <h1>
+      <span class="fas fa-bolt"></span>
+      runboost
+    </h1>
+    <br>
+    
+    <h1>今月の目標を設定しましょう！</h1>
     
     <br>
     
@@ -11,15 +14,6 @@
      <div class="goal">
        <%= form.label :目　標 %><br>
        <%= form.number_field :distance, autofocus: true, class: "form-control"  %>
-     </div>
-     
-     <br>
-     
-      <div class="time">
-       <%= form.label :月　間 %><br>
-       <div class="form-inline justify-content-center">
-           <%= form.date_select :date, { discard_day: true, use_month_numbers: true} ,autofocus: true, class: "form-control"  %>
-       </div>
      </div>
      
      <br>
