@@ -1,50 +1,49 @@
-<h1>プロフィール編集</h1>
-
 <div class="container">
     <div class="text-center">
-      <%= form_for @user,html: { class: "form-signin" } do |f| %>
-        <div class="field">
-          <%= f.label :アイコン %><br>
-          <%= f.attachment_field :profie_image %>
-        </div>
-        
-        <br>
-        
-        <div class="field">
-          <%= f.label :名　前 %><br>
-          <%= f.text_field :username, autofocus: true, class: "form-control" %>
-        </div>
-        
-         <br>
-         
-        <div class="field">
-          <%= f.label :eメール %><br>
-          <%= f.text_field :email, autofocus: true, class: "form-control" %>
-        </div> 
-        
-         <br>
-         
-        <div class="field">
-          <div class="form-group form-group-lg">
-           <%= f.label :自己紹介 %><br>
-           <%= f.text_area :profile, autofocus: true, class: "form-control" %>
+        <h1>プロフィール編集</h1>
+        <%= form_for @user,html: { class: "form-signin" } do |f| %>
+            <div class="field">
+              <%= f.label :アイコン %><br>
+              <%= f.attachment_field :profie_image %>
+            </div>
+            
+            <br>
+            
+            <div class="field">
+              <%= f.label :名　前 %><br>
+              <%= f.text_field :username, autofocus: true, class: "form-control" %>
+            </div>
+            
+             <br>
+             
+            <div class="field">
+              <%= f.label :eメール %><br>
+              <%= f.text_field :email, autofocus: true, class: "form-control" %>
+            </div> 
+            
+             <br>
+             
+            <div class="field">
+              <div class="form-group form-group-lg">
+               <%= f.label :自己紹介 %><br>
+               <%= f.text_area :profile, autofocus: true, class: "form-control" %>
+              </div>
+            </div>  
+           
+            <br>
+            
+            <div>
+              <%= f.submit "更　新", class: "btn btn-primary" %>
+            </div>  
+            
+          <% end %>
+          
+          <br>
+          
+          <div>
+           <h3>退会される方はこちらのボタンを押してください。</h3>
+           <br>
+           <%= link_to '退　会', user_path(current_user), method: :delete, class: "btn btn-danger", data: { confirm: '削除しますか？' }  %>
           </div>
-        </div>  
-       
-        <br>
-        
-        <div>
-          <%= f.submit "更　新", class: "btn btn-primary" %>
-        </div>  
-        
-      <% end %>
-      
-      <br>
-      
-      <div>
-       <h3>退会される方はこちらのボタンを押してください。</h3>
-       <br>
-       <%= link_to '退　会', user_path(current_user), method: :delete, class: "btn btn-danger", data: { confirm: '削除しますか？' }  %>
-      </div>
-    </div>
-  </div>  
+        </div>
+      </div>  
