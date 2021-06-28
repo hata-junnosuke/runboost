@@ -36,10 +36,6 @@
         </div>  
         <!-- Card Body -->
         <div class="card-body">
-          
-                 
-               
-                  
           <p class="text-bold text-large text-ornament">今月の達成度</p>
           <br>
           <% if @user.goals.present? && @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance <= 100 %>

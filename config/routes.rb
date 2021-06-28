@@ -1,11 +1,12 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-  root "home#top"
+Rails.application.routes.draw do
+  root 'home#top'
   devise_for :users
-  
+
   resources :users
   delete 'destroy_user', to: 'users#destroy'
-  
+
   resources :blogs
   resources :goals
 end

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class GoalsController < ApplicationController
-   before_action :authenticate_user!
-   
+  before_action :authenticate_user!
+
   def index
     @goals = Goal.all
   end
@@ -15,13 +17,13 @@ class GoalsController < ApplicationController
 
   def create
     current_user.goals.build(goal_params).save
-    redirect_to root_path, notice:"設定しました。"
+    redirect_to root_path, notice: '設定しました。'
   end
 
   def destroy
     @goal = Goal.find(params[:id])
     @goal.destroy
-    redirect_to goals_path, notice:"削除しました。"
+    redirect_to goals_path, notice: '削除しました。'
   end
 
   def edit
@@ -31,7 +33,7 @@ class GoalsController < ApplicationController
   def update
     @goal = Goal.find(params[:id])
     if @goal.update(goal_params)
-      redirect_to goals_path, notice: "編集しました。"
+      redirect_to goals_path, notice: '編集しました。'
     else
       render 'edit'
     end
