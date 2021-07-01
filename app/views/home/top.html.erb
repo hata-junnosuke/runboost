@@ -31,7 +31,7 @@
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     今月の目標距離</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">
-                                  <% if @goal.present? %>
+                                  <% if @goal.this_month.present? %>
                                     <p><%= @goal.this_month.last.distance %> Km<p> 
                                   <% else %>
                                     <p>目標を設定しましょう！</p>
@@ -109,7 +109,7 @@
                         <p class="text-bold text-large text-ornament">今月の目標</p>
                         <br>
                         <p class="text-center">
-                          <% if @goal.present? %>
+                          <% if @goal.this_month.present? %>
                             <%= @goal.this_month.last.distance %> Km 
                           <% else %>
                             目標を設定しましょう！

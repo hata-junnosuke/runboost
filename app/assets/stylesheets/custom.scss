@@ -35,7 +35,7 @@ body {
   font-size: 2em;
   vertical-align: middle;
 }
-// 追記
+
 .datetime-form {
   display: inline-block;
   width: auto;
@@ -227,6 +227,18 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 
 .alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  background-color: #FFBEDA;
+  height:50px;
+  text-align:center;
+  font-size:30px;
+  color:red;
+}
+
+.error_messages{
   margin-bottom: 0px;
   position: fixed;
   width: 100%;
