@@ -47,6 +47,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
 end
 
+  gem 'dotenv-rails'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -71,20 +72,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
 gem 'coffee-script-source', '1.8.0'
-
 gem 'devise'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
-
 gem 'momentjs-rails'
-
 gem 'chartkick'
 gem 'groupdate'
 gem 'simple_calendar', '~> 2.0'
-
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
-
 gem 'devise-i18n'
+gem 'fog-aws'
