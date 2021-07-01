@@ -47,7 +47,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
 end
 
-  gem 'dotenv-rails'
+  
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -83,4 +83,3 @@ gem 'simple_calendar', '~> 2.0'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise-i18n'
-gem 'fog-aws'
