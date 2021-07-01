@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: runboost_production
-  username: runboost
-  password: <%= ENV['RUNBOOST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
