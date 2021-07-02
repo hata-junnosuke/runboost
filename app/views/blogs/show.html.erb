@@ -21,10 +21,7 @@
     
     <br>
     
-    <p>
-      <strong>コメント</strong><br>
-      <%= @blog.comment %>
-    </p>
+   
     <%= link_to '編集', edit_blog_path(@blog) %> |
     <%= link_to '削除',blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %> |
     <%= link_to '戻る', blogs_path %>
