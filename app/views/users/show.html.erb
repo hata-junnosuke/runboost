@@ -150,30 +150,30 @@
               <tr>
                 <th scope="row">先月</th>
                 <td><%= @user.blogs.last_month.sum(:distance) %> Km</td>
-                <% if @user.goals.present? %>
+                <% if @user.goals.last_month.present? %>
                   <td><%= @user.goals.last_month.last.distance %> Km</td>
                 <% else %>
                   <td><p>未設定</p></td>
                 <% end %>
-                <% if @user.goals.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance >= 51 &&  @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance <= 100%>
+                <% if @user.goals.last_month.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance >= 51 &&  @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance <= 100%>
                   <td>
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:<%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>%" aria-valuenow="<%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>" aria-valuemin="0" aria-valuemax="100">
                       <%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>  %
                     </div>
                   </td>
-                <% elsif @user.goals.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance >= 21 &&  @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance<= 50 %>
+                <% elsif @user.goals.last_month.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance >= 21 &&  @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance<= 50 %>
                   <td>
                     <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width:<%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>%" aria-valuenow="<%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>" aria-valuemin="0" aria-valuemax="100">
                       <%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>  %
                     </div>
                   </td>
-                <% elsif  @user.goals.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance <= 20 %>
+                <% elsif  @user.goals.last_month.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance <= 20 %>
                   <td>
                     <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width:15%" aria-valuenow="<%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>" aria-valuemin="0" aria-valuemax="100">
                       <%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>  %
                     </div>
                   </td>
-                <% elsif  @user.goals.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance >= 101 %>
+                <% elsif  @user.goals.last_month.present? && @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance >= 101 %>
                   <td>
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                       <%= @user.blogs.last_month.sum(:distance) * 100 / @user.goals.last_month.last.distance %>  %
