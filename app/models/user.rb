@@ -8,7 +8,5 @@ class User < ApplicationRecord
   has_many :blogs
   has_many :goals
   attachment :profie_image
-  assert_difference "Model.count", Model do
-    
-  end
+
 end
