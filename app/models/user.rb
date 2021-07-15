@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :blogs
   has_many :goals
   attachment :profie_image
-
+ 
 end

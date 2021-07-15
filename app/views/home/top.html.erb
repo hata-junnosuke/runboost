@@ -128,7 +128,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">ワークアウト</h6>
                  
                    
-                    <%= link_to "編　集", blogs_path, class: "btn btn-primary" %>
+                    <%= link_to "記録する", blogs_path, class: "btn btn-primary" %>
                   
                 </div>
                 <!-- Card Body -->
@@ -155,14 +155,16 @@
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">過去の記録</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">今年の記録</h6>
                 </div>
                 <div class="card-body">
                 　<h1>月　間</h1>
-                  <%= bar_chart @blogs.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, width: "1500px", height: "400px", colors: ["#0099FF"] %>
+                  <%= bar_chart @blogs.this_year.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, height: "400px", colors: ["#0099FF"],xtitle: "月" ,
+  ytitle: "配当金合計",
+  prefix: "¥" %>
                   <br>
                   <h1>年　間</h1>
-                  <%= bar_chart @blogs.this_year.group_by_year(:start_time).sum(:distance), min: 0, max: 2000, width: "1500px", height: "100px" , colors: ["blue"]%>
+                  <%= bar_chart @blogs.this_year.group_by_year(:start_time, format:"%Y").sum(:distance), min: 0, max: 2000, height: "100px" , colors: ["blue"]%>
                  
                 </div>
               </div>
