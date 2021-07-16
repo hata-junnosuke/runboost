@@ -84,3 +84,4 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'fog-aws'
 gem "carrierwave"
+gem "aws-sdk-s3", require: false 
