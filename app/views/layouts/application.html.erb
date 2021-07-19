@@ -25,13 +25,14 @@
     <% end %>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-
       <a class="navbar-brand" href=<%= root_path %>>
         <span class="fas fa-bolt"></span>
         runboost
       </a>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <%= link_to "マイページ", root_path, class: "nav-link mx-5" %>
@@ -72,6 +73,8 @@
         </form>
       </div>
     </nav>
+    
+    
       
     <%= yield %>
     <script>
