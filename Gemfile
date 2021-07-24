@@ -45,7 +45,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
-  gem 'dotenv-rails'
+  
 end  
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -85,3 +85,4 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'fog-aws'
 gem "carrierwave"
+gem 'dotenv-rails'
