@@ -75,6 +75,7 @@ gem 'coffee-script-source', '1.8.0'
 gem 'devise'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
+gem "refile-s3"
 gem 'momentjs-rails'
 gem 'chartkick'
 gem 'groupdate'
@@ -84,4 +85,3 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'fog-aws'
 gem "carrierwave"
-gem "aws-sdk-s3", require: false 

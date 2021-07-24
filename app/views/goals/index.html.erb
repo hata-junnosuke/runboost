@@ -11,18 +11,18 @@
     <br>
     
     <%= form_with(model: Goal, local: true,html: { class: "form-signin" }) do |form| %>
-     <div class="goal">
-       <%= form.label :目　標 %><br>
-       <%= form.number_field :distance, autofocus: true, class: "form-control"  %>
-     </div>
-     
-     <br>
-     
      <div class="time">
       <%= form.label :月　間 %><br>
       <div class="form-inline justify-content-center">
        <%= form.date_select :date, { discard_day: true, use_month_numbers: true} ,autofocus: true, class: "form-control"  %>
       </div>
+     </div>
+     
+     <br>
+     
+     <div class="goal">
+       <%= form.label :目　標 %><br>
+       <%= form.number_field :distance, autofocus: true, class: "form-control"  %>
      </div>
      
      <br>
