@@ -320,7 +320,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (~> 2)
+  aws-sdk
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.1)
   byebug
