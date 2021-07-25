@@ -83,6 +83,4 @@ gem 'simple_calendar', '~> 2.0'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise-i18n'
-gem 'fog-aws'
-gem "carrierwave"
 gem 'dotenv-rails'
