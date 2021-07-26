@@ -93,7 +93,11 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
-                        <%= image_tag current_user.profie_image_id.url,fallback: "no-image.png", class: "card-img-top" %>
+                        <% if current_user.profie_image_id.blank? %>
+                          <%= image_tag "no-image.png", class: "card-img-top" %>
+                        <% else %>
+                          <%= image_tag current_user.profie_image_id.url, class: "card-img-top" %>
+                        <% end %>
                       <hr>
                       <div class="content">
                         <p class="text-center text-bold text-large"><%= current_user.username %></p>
