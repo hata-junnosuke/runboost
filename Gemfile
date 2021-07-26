@@ -67,7 +67,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'aws-sdk-s3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -85,3 +84,5 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'dotenv-rails'
+gem "carrierwave"
+gem 'fog-aws'

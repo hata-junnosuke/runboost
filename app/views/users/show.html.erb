@@ -12,7 +12,7 @@
         <!-- Card Body -->
         <div class="card-body">
           <div class="chart-area">
-              <%= attachment_image_tag @user, :profie_image, fallback: "no-image.png", class: "card-img-top" %>
+              <%= image_tag @user.profie_image_id.url, fallback: "no-image.png", class: "card-img-top" %>
             <hr>
             <div class="content">
               <p class="text-center text-bold text-large"><%= @user.username %></p>

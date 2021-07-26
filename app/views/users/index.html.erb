@@ -4,7 +4,7 @@
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card">
           <%= link_to user_path(user) do %>  
-            <%= attachment_image_tag user, :profie_image, fallback: "no-image.png", class: "card-img-top" %>
+            <%= image_tag user.profie_image_id.url, fallback: "no-image.png", class: "card-img-top" %>
           <% end %>
           <div class="text-center">
             <%= link_to user.username, user_path(user) %>

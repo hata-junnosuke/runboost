@@ -4,7 +4,7 @@
         <%= form_for @user,html: { class: "form-signin" } do |f| %>
             <div class="field">
               <%= f.label :アイコン %><br>
-              <%= f.attachment_field :profie_image %>
+              <%= f.file_field :profie_image_id%>
             </div>
             
             <br>
