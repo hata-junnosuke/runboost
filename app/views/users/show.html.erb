@@ -137,7 +137,7 @@
                   </td>
                 <% elsif  @user.goals.this_month.present? && @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance <= 20 %>
                   <td>
-                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width:10%" aria-valuenow="<%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width:15%" aria-valuenow="<%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>" aria-valuemin="0" aria-valuemax="100">
                       <%= @user.blogs.this_month.sum(:distance) * 100 / @user.goals.this_month.last.distance %>  %
                     </div>
                   </td>

@@ -86,3 +86,6 @@ gem 'dotenv-rails'
 gem "carrierwave"
 gem 'fog-aws'
 gem 'aws-sdk-s3'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem 'mini_magick'

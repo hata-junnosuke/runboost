@@ -23,7 +23,7 @@
     
     <p>
       <strong>コメント</strong><br>
-      <%= @blog.comment %>
+      <%=safe_join(@blog.comment.split("\n"),tag(:br))%>
     </p>
     
     <br>
