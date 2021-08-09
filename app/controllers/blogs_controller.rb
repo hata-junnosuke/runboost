@@ -21,14 +21,19 @@ class BlogsController < ApplicationController
   end
 
   def create
-    current_user.blogs.create(blog_parameter)
-    redirect_to blogs_path, notice: '記録しました。'
+    @blog = current_user.blogs.new(blog_parameter)
+    if @blog.save
+      redirect_to blogs_path, notice: '記録しました。'
+    else
+      flash[:alert] = "メニュー又は距離を入力してください。"
+      render 'new'
+    end
   end
 
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    redirect_to blogs_path, alert: '削除しました。'
+    redirect_to blogs_path, notice: '削除しました。'
   end
 
   def edit

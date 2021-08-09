@@ -7,6 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :blogs
   has_many :goals
-  #attachment :profie_image
   mount_uploader :profie_image_id, ImageUploader
 end

@@ -1,182 +1,178 @@
-<!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
-     <!-- Main Content -->
-      <div id="content">
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <!-- Content Row -->
-          <div class="row">
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 今月の距離</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.this_month.sum(:distance) %> Km</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-running fa-2x text-gray-300"></i>
-                    </div>
+    <div id="content">
+      <div class="container-fluid">
+        <!--1段目横並び-->
+        <div class="row">
+          <!-- 今月の距離 -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 今月の距離</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.this_month.sum(:distance) %> Km</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-running fa-2x text-gray-300"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    今月の目標距離</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">
-                                  <% if @goal.this_month.present? %>
-                                    <p><%= @goal.this_month.last.distance %> Km<p> 
-                                  <% else %>
-                                    <p>目標を設定しましょう！</p>
-                                  <% end %>
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-info shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">年間走行距離</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.sum(:distance) %> Km</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    トロフィー</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">Coming Soon</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-trophy fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
           </div>
-          <!-- Content Row -->
-          
-          <div class="row">
-            <div class="col-xl-3 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div
-                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">プロフィール</h6>
-                    <%= link_to "編　集", edit_user_path(current_user), class: "btn btn-primary" %>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-area">
-                        <% if current_user.profie_image_id.blank? %>
-                          <%= image_tag "no-image.png", class: "card-img-top" %>
-                        <% else %>
-                          <%= image_tag current_user.profie_image_id.url, class: "card-img-top" %>
-                        <% end %>
-                      <hr>
-                      <div class="content">
-                        <p class="text-center text-bold text-large"><%= current_user.username %></p>
-                      </div>
-                      <hr>
-                      <div class="content">
-                        <p class="text-bold text-large text-ornament">自己紹介</p>
-                        <br>
-                        <p class="text-center"><%= current_user.profile %></p>
-                      </div>
-                      <hr>
-                      <div class="content">
-                        <p class="text-bold text-large text-ornament">今月の目標</p>
-                        <br>
-                        <p class="text-center">
-                          <% if @goal.this_month.present? %>
-                            <%= @goal.this_month.last.distance %> Km 
-                          <% else %>
-                            目標を設定しましょう！
-                          <% end %>
-                        </p>  
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <!-- Area Chart -->
-            <div class="col-xl-9 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">ワークアウト</h6>                 
-                  <%= link_to "記録する", new_blog_path, class: "btn btn-primary" %>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-area">
-                      <%= month_calendar events: @blogs do |date, blogs| %>
-                        <%= date.day %>
-                        <% blogs.each do |blog| %>
-                          <div>
-                            <%= link_to blog.content, blog %>
+          <!-- 今月の目標距離 -->
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                  今月の目標距離</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">
+                                <% if @goal.this_month.present? %>
+                                  <p><%= @goal.this_month.last.distance %> Km<p> 
+                                <% else %>
+                                  <p>目標を設定しましょう！</p>
+                                <% end %>
+                              </div>
                           </div>
-                        <% end %>
+                          <div class="col-auto">
+                              <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- 年間走行距離 -->
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                  <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">年間走行距離</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.sum(:distance) %> Km</div>
+                          </div>
+                          <div class="col-auto">
+                              <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- ランキング -->
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                  <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                  ランキング</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">Coming Soon</div>
+                          </div>
+                          <div class="col-auto">
+                              <i class="fas fa-trophy fa-2x text-gray-300"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- 1段目横並び終わり -->
+        
+        <!-- 2段目横並び-->
+        <div class="row">
+          <!-- プロフィール -->
+          <div class="col-xl-3 col-lg-7">
+            <div class="card shadow mb-4">
+              <!-- プロフィールヘッダー -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">プロフィール</h6>
+                <%= link_to "編　集", edit_user_path(current_user), class: "btn btn-primary" %>
+              </div>
+              <!-- プロフィールの中身 -->
+              <div class="card-body">
+                  <div class="chart-area">
+                      <% if current_user.profie_image_id.blank? %>
+                        <%= image_tag "no-image.png", class: "card-img-top" %>
+                      <% else %>
+                        <%= image_tag current_user.profie_image_id.url, class: "card-img-top" %>
                       <% end %>
+                    <hr>
+                    <div class="content">
+                      <p class="text-center text-bold text-large"><%= current_user.username %></p>
                     </div>
-                </div>
+                    <hr>
+                    <div class="content">
+                      <p class="text-bold text-large text-ornament">自己紹介</p>
+                      <br>
+                      <p class="text-center"><%= current_user.profile %></p>
+                    </div>
+                    <hr>
+                    <div class="content">
+                      <p class="text-bold text-large text-ornament">今月の目標</p>
+                      <br>
+                      <p class="text-center">
+                        <% if @goal.this_month.present? %>
+                          <%= @goal.this_month.last.distance %> Km 
+                        <% else %>
+                          目標を設定しましょう！
+                        <% end %>
+                      </p>  
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
-          
-          <!-- Content Row -->
-          <div class="row">
-            <!-- Content Column -->
-            <div class="col-lg-12 mb-4">
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">今年の記録</h6>
-                </div>
-                <div class="card-body">
-                　<h2 class="text-center text-bold">月間記録</h2>
-                  <%= bar_chart @blogs.this_year.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, height: "400px", colors: ["#0099FF"],xtitle: "距　離" ,ytitle: "月",suffix: "Km" %>
-                  <br>
-                  <h2 class="text-center text-bold">年間記録</h2>
-                  <%= bar_chart @blogs.this_year.group_by_year(:start_time, format:"%Y").sum(:distance), min: 0, max: 2000, height: "150px" , colors: ["blue"],xtitle: "距　離" ,suffix: "Km" %>
-                 
-                </div>
+          <!-- プロフィール終わり -->
+          <!-- ワークアウト -->
+          <div class="col-xl-9 col-lg-7">
+            <div class="card shadow mb-4">
+              <!-- ワークアウトヘッダー -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">ワークアウト</h6>                 
+                <%= link_to "記録する", new_blog_path, class: "btn btn-primary" %>
+              </div>
+              <!-- ワークアウトの中身 -->
+              <div class="card-body">
+                  <div class="chart-area">
+                    <%= month_calendar events: @blogs do |date, blogs| %>
+                      <%= date.day %>
+                      <% blogs.each do |blog| %>
+                        <div>
+                          <%= link_to blog.content, blog %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
               </div>
             </div>
-          </div>  
-        
-      
-        <!-- /.container-fluid -->
+          </div>
+          <!-- ワークアウト終わり -->
         </div>
-      <!-- End of Main Content -->
+        <!-- 2段目横並び終わり-->
+        
+        <!-- 今年の記録 -->
+        <div class="row">
+          <div class="col-lg-12 mb-4">
+            <div class="card shadow mb-4">
+            　<!-- 今年の記録ヘッダー -->
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">今年の記録</h6>
+              </div>
+              <!-- 今年の記録の中身 -->
+              <div class="card-body">
+                <!-- 月間記録のグラフ -->
+              　<h2 class="text-center text-bold">月間記録</h2>
+                <%= bar_chart @blogs.this_year.group_by_month_of_year(:start_time).sum(:distance), min: 0, max: 200, height: "400px", colors: ["#0099FF"],xtitle: "距　離" ,ytitle: "月",suffix: "Km" %>
+                <br>
+                <!-- 年間記録のグラフ -->
+                <h2 class="text-center text-bold">年間記録</h2>
+                <%= bar_chart @blogs.this_year.group_by_year(:start_time, format:"%Y").sum(:distance), min: 0, max: 2000, height: "150px" , colors: ["blue"],xtitle: "距　離" ,suffix: "Km" %>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
     </div>
-    <!-- End of Content Wrapper -->
   </div>
-  <!-- End of Page Wrapper -->
 
 
