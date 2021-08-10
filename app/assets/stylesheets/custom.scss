@@ -246,3 +246,12 @@ Due to the split circle of progress-left and progress right, we must use the ani
   font-size:30px;
   color:red;
 }
+
+.tooltip-inner  {
+  background-color: Blue;
+  text-align:auto;
+}
+
+.bs-tooltip-bottom .arrow::before{
+    border-bottom-color: Blue;
+}
