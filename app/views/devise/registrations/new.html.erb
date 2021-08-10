@@ -4,7 +4,8 @@
      <h1><span class="fas fa-bolt"></span>
         runboost
       </h1>
-      <h2>runboostはあなたの走りのためのサービスです！</h2>  
+      <h2>runboostはあなたの走りのためのサービスです！</h2>
+      <%= link_to"runboostの機能にできること", home_about_path %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin" } ) do |f| %>
     <div class="field">
       <%= f.label :ユーザーネーム %><br />

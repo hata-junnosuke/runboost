@@ -29,6 +29,7 @@ body {
 .container_about{
   margin-top: 100px;
   padding-top: 20px;
+  padding-bottom: 20px;
   background-color: white;
   background-size: cover;
   margin: 0 auto;
@@ -39,12 +40,14 @@ body {
  margin-top: 40px;
 }
 
+//ロゴマーク
 .fa-bolt{
   color: blue;
   font-size: 2em;
   vertical-align: middle;
 }
 
+//カレンダー
 .datetime-form {
   display: inline-block;
   width: auto;
@@ -76,6 +79,7 @@ body {
     padding: 15px;
     margin: auto;
 }
+
 // トップページのプロフィールで使用
 .text-ornament {
     border-left: 8px solid #0062cc;
@@ -246,7 +250,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
   font-size:30px;
   color:red;
 }
-
+//ナビゲーションバーに「目標を設定してください」と表示
 .tooltip-inner  {
   background-color: Blue;
   text-align:auto;
