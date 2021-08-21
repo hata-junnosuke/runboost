@@ -4,15 +4,15 @@ class GoalsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @goals = Goal.all
+    @goals = current_user.goals.all
   end
 
   def new
-    @goal = Goal.new
+    @goal = current_user.goals.new
   end
 
   def show
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
   end
 
   def create
@@ -21,17 +21,17 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
     @goal.destroy
     redirect_to goals_path, notice: '削除しました。'
   end
 
   def edit
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
   end
 
   def update
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
     if @goal.update(goal_params)
       redirect_to goals_path, notice: '編集しました。'
     else
