@@ -45,6 +45,8 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'rspec-rails', '~> 4.1.0'
+  gem 'factory_bot_rails'
   
 end  
 group :development do
@@ -55,14 +57,16 @@ group :development do
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'capybara' 
+  gem 'launchy' 
+  gem 'webdrivers'
 end
 
 group :production do
