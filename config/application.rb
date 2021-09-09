@@ -19,12 +19,13 @@ module Runboost
     # the framework and any gems in your application.
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
   end
+
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec,
-      view_specs: false,
-      helper_specs: false,
-      routing_specs: false
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false
     end
   end
 end

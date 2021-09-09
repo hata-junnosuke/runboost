@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     if @blog.save
       redirect_to blogs_path, notice: '記録しました。'
     else
-      flash[:alert] = "メニュー又は距離を入力してください。"
+      flash[:alert] = 'メニュー又は距離を入力してください。'
       render 'new'
     end
   end

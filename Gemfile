@@ -41,14 +41,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
   gem 'rspec-rails', '~> 4.1.0'
-  gem 'factory_bot_rails'
-  
-end  
+end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -56,16 +55,16 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'rubocop', require: false
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'capybara'
   gem 'chromedriver-helper'
-  gem 'capybara' 
-  gem 'launchy' 
+  gem 'launchy'
   gem 'webdrivers'
 end
 
@@ -74,22 +73,22 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-#gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'aws-sdk-s3'
+gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap4-kaminari-views'
+gem 'carrierwave'
+gem 'chartkick'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
-gem 'refile', require: 'refile/rails', github: 'manfe/refile'
-gem 'refile-mini_magick'
-gem 'momentjs-rails'
-gem 'chartkick'
-gem 'groupdate'
-gem 'simple_calendar', '~> 2.0'
-gem 'bootstrap', '~> 4.1.1'
-gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'dotenv-rails'
-gem "carrierwave"
 gem 'fog-aws'
-gem 'aws-sdk-s3'
+gem 'groupdate'
+gem 'jquery-rails'
 gem 'kaminari'
-gem 'bootstrap4-kaminari-views'
 gem 'mini_magick'
+gem 'momentjs-rails'
+gem 'refile', require: 'refile/rails', github: 'manfe/refile'
+gem 'refile-mini_magick'
+gem 'simple_calendar', '~> 2.0'

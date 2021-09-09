@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RequestSpecHelper
   include Warden::Test::Helpers
 
@@ -14,7 +16,7 @@ module RequestSpecHelper
     logout(warden_scope(resource))
   end
 
- private
+  private
 
   def warden_scope(resource)
     resource.class.name.underscore.to_sym
