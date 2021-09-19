@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password_runboost
+      MYSQL_DATABASE: runboost_development
+      MYSQL_USER: runboost
+      MYSQL_PASSWORD: password_runboost
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
