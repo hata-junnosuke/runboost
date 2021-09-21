@@ -1,5 +1,5 @@
 current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vender/bundle/ruby/2.6.0/gems/mysql2-0.4.10/ext/mysql2
-/Users/hatajunnosuke/.rbenv/versions/2.6.3/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210913-14741-1xff7ad.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib
+/Users/hatajunnosuke/.rbenv/versions/2.6.3/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210921-94330-1m59ump.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl@1.1/lib
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for ruby/thread.h... yes
@@ -41,4 +41,4 @@ linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vender/bundle/ruby/2.6.0/gems/mysql2-0.4.10/ext/mysql2
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210913-14741-x0nw8d/mysql2
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210921-94330-1h9d6xz/mysql2
