@@ -2,7 +2,7 @@
 
 class BlogsController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
   def index
     @blogs = current_user.blogs
     @blogs_for_pagenation = current_user.blogs.page(params[:page]).per(5)
@@ -46,6 +46,14 @@ class BlogsController < ApplicationController
       redirect_to blogs_path, notice: '編集しました。'
     else
       render 'edit'
+    end
+  end
+
+  def ensure_correct_user
+    @blog = Blog.find_by(id: params[:id])
+    if @blog.user_id != current_user.id
+      flash[:alert] = "権限がありません"
+      redirect_to root_path
     end
   end
 
