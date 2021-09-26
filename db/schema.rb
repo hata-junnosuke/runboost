@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_050117) do
+ActiveRecord::Schema.define(version: 2021_09_26_064739) do
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "user_id"
-    t.text "content"
+    t.integer "user_id", null: false
+    t.text "content", null: false
     t.integer "distance", default: 0
-    t.datetime "start_time"
+    t.datetime "start_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comment"
   end
 
   create_table "goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.integer "distance", default: 0
-    t.datetime "date"
+    t.datetime "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_050117) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username"
+    t.string "username", null: false
     t.text "profile"
     t.string "profie_image_id"
     t.datetime "created_at", null: false

@@ -2,7 +2,7 @@
 
 class BlogsController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
   def index
     @blogs = current_user.blogs
     @blogs_for_pagenation = current_user.blogs.page(params[:page]).per(5)
@@ -37,13 +37,7 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    if params[:id] == current_user.id
-      @blog = Blog.find(params[:id])
-      render action: :edit
-    else
-      flash[:alert] = "権限がありません"
-      redirect_to root_path
-    end
+    @blog = Blog.find(params[:id])
   end
 
 
@@ -57,7 +51,13 @@ class BlogsController < ApplicationController
     end
   end
 
-
+  def ensure_correct_user
+    @blog = Blog.find_by(id: params[:id])
+    if @blog.user_id != current_user.id
+      flash[:alert] = "権限がありません"
+      redirect_to root_path
+    end
+  end
 
   private
 
