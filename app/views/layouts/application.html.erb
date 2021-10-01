@@ -49,7 +49,6 @@
           <% if user_signed_in? && current_user.goals.blank? %>
             <li class="nav-item">
               <%= link_to "目標設定", goals_path, class: 'nav-link mx-5 toggle', id: "demo06", toggle: "tooltip", title: "目標を設定しましょう！", trigger: "manual" %>
-              
             </li>
           <% else %>  
             <li class="nav-item">
