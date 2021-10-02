@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body>
@@ -46,13 +46,13 @@
             <%= link_to "記録詳細",blogs_path, class: "nav-link mx-5" %>
           </li>
           <!-- 目標設定がない場合の吹き出し -->
-          <% if user_signed_in? && current_user.goals.blank? %>
-            <li class="nav-item">
-              <%= link_to "目標設定", goals_path, class: 'nav-link mx-5 toggle', id: "demo06", toggle: "tooltip", title: "目標を設定しましょう！", trigger: "manual" %>
-            </li>
-          <% else %>  
+          <% if user_signed_in? && current_user.goals.present? %>
             <li class="nav-item">
               <%= link_to "目標設定", goals_path, class: "nav-link mx-5" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "目標設定", goals_path, class: 'nav-link mx-5 toggle', id: "demo06", toggle: "tooltip", title: "目標を設定しましょう！", trigger: "manual" %>
             </li>
           <% end %>  
            <li class="nav-item">
