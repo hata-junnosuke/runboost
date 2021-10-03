@@ -46,7 +46,7 @@
             <%= link_to "記録詳細",blogs_path, class: "nav-link mx-5" %>
           </li>
           <!-- 目標設定がない場合の吹き出し -->
-          <% if user_signed_in? && current_user.goals.present? %>
+          <% if user_signed_in? && current_user.goals.this_month.present? %>
             <li class="nav-item">
               <%= link_to "目標設定", goals_path, class: "nav-link mx-5" %>
             </li>
