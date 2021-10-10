@@ -13,28 +13,28 @@
     <%= form_with(model: @blog, local: true, html: { class: "form-signin" } ) do |form| %>
       <div class="time">
         <%= form.label :日　時 %><br>
-          <%= form.date_field :start_time, value:Time.now.strftime("%Y-%m-%d"), autofocus: true, class: "form-control" %>
+          <%= form.date_field :start_time, value:Time.now.strftime("%Y-%m-%d"), autofocus: true, class: "form-control", id: "start_time" %>
       </div>
       
       <br> 
       
       <div class="content">
         <%= form.label :メニュー %><br>
-        <%= form.text_field :content, autofocus: true, placeholder: "例）ジョグ、タイムレース", class: "form-control" %>
+        <%= form.text_field :content, autofocus: true, placeholder: "例）ジョグ、タイムレース", class: "form-control", id: "content" %>
       </div>
       
       <br>
       
       <div class="distance">
         <%= form.label :距離（Km） %><br>
-        <%= form.number_field :distance, autofocus: true,  min: 0, class: "form-control" %>
+        <%= form.number_field :distance, autofocus: true,  min: 0, class: "form-control", id: "distance" %>
       </div>
       
       <br>
       
       <div class="comment">
         <%= form.label :コメント %><br>
-        <%= form.text_area :comment, autofocus: true, rows: 10, placeholder: "今回のメニューにコメントしましょう！", class: "form-control" %>
+        <%= form.text_area :comment, autofocus: true, rows: 10, placeholder: "今回のメニューにコメントしましょう！", class: "form-control", id: "comment" %>
       </div>
       
       <br>
