@@ -8,22 +8,20 @@ https://runboost.herokuapp.com/
 # 実装機能
 - **走りの記録**
 - **走りの目標設定**
-<<<<<<< HEAD
 - **走りの達成度の確認**
-=======
+
 - **走りの達成度の確認**   
->>>>>>> 655a036484a5696b5cbd2724f13f1ba5f3122a0d
 
 上記の機能により走りの見える化を実現し、ランナーの走りをサポートします。
 # 機能詳細
 ### 一目でわかる「あなたの走り」
-<<<<<<< HEAD
+
 - 「今月の距離」「年間走行距離」などをトップページで速やかに確認できます。
 - カレンダーを見れば速やかにあなたの走りのログを確認できます。
-=======
+
   - 「今月の距離」「年間走行距離」などをトップページで速やかに確認できます。
   - カレンダーを見れば速やかにあなたの走りのログを確認できます。
->>>>>>> 655a036484a5696b5cbd2724f13f1ba5f3122a0d
+
 
 [![Image from Gyazo](https://i.gyazo.com/202e8de42c2151bb26483343081a746d.png)](https://gyazo.com/202e8de42c2151bb26483343081a746d)
 ### グラフで「見える化」
@@ -37,20 +35,15 @@ https://runboost.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/f7290c28cfebf3f0f2aaf19d32a3228c.png)](https://gyazo.com/f7290c28cfebf3f0f2aaf19d32a3228c)
 ### 快適に遡れる「過去ログ」
 - 過去のログを非同期でのページネーションで快適に確認できます。
-<<<<<<< HEAD
-  [![Image from Gyazo](https://i.gyazo.com/0683a0728b94b2bb84191bb6ff9b7c82.png)](https://gyazo.com/0683a0728b94b2bb84191bb6ff9b7c82)
-=======
 [![Image from Gyazo](https://i.gyazo.com/0683a0728b94b2bb84191bb6ff9b7c82.png)](https://gyazo.com/0683a0728b94b2bb84191bb6ff9b7c82)
->>>>>>> 655a036484a5696b5cbd2724f13f1ba5f3122a0d
+
 # 使用技術
 ### バックエンド
 - Ruby 2.6.3
 - Rails 5.2.6
-<<<<<<< HEAD
 - RSpec 4.1
-=======
 - RSpec 4.1   
->>>>>>> 655a036484a5696b5cbd2724f13f1ba5f3122a0d
+
 
 ### フロントエンド
 - HTML
