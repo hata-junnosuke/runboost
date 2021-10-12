@@ -39,8 +39,7 @@ https://runboost.herokuapp.com/
 ### バックエンド
 - Ruby 2.6.3
 - Rails 5.2.6
-- RSpec 4.1
-- RSpec 4.1   
+- RSpec 4.1 
 
 
 ### フロントエンド

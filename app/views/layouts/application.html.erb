@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Runboost</title>
     <%= csrf_meta_tags %>
@@ -32,7 +32,11 @@
         runboost
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
-        <span class="navbar-toggler-icon"></span>
+        <% if user_signed_in? && current_user.goals.this_month.blank? %>
+          <span class="navbar-toggler-icon d-block d-lg-none" id="demo07" toggle="tooltip" title= "目標を設定しましょう！" trigger="manual"></span>
+        <% else %>
+          <span class="navbar-toggler-icon"></span>
+        <% end %>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
@@ -48,7 +52,8 @@
           <!-- 目標設定がない場合の吹き出し -->
           <% if user_signed_in? && current_user.goals.this_month.blank? %>
             <li class="nav-item">
-              <%= link_to "目標設定", goals_path, class: 'nav-link mx-5 toggle', id: "demo06", toggle: "tooltip", title: "目標を設定しましょう！", trigger: "manual" %>
+              <%= link_to "目標設定", goals_path, class: "nav-link mx-5 toggle d-none d-lg-block", id: "demo06", toggle: "tooltip", title: "目標を設定しましょう！", trigger: "manual" %>
+              <%= link_to "目標設定", goals_path, class: "nav-link mx-5 toggle d-block d-lg-none" %>
             </li>
           <% else %>
             <li class="nav-item">
@@ -94,6 +99,10 @@
       
       $(function() {
       	$('#demo06').tooltip('show');
+      });
+
+      $(function() {
+          $('#demo07').tooltip('show');
       });
     </script>
     
