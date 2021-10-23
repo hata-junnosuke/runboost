@@ -34,5 +34,5 @@ jobs:
     - name: Run tests
       run: |
         docker-compose up -d
-        docker-compose exec bin/rspec
+        bundle exec bin/rspec
         
