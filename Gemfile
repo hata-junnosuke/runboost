@@ -89,6 +89,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'mini_magick'
 gem 'momentjs-rails'
-gem 'refile', require: 'refile/rails', github: 'manfe/refile'
-gem 'refile-mini_magick'
+
 gem 'simple_calendar', '~> 2.0'
