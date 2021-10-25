@@ -1,0 +1,15 @@
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/hatajunnosuke/.rbenv/versions/3.0.2/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/3.0.2/lib/ruby/site_ruby/3.0.0 -r ./siteconf20211025-39805-a0t109.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20211025-39805-b8wk0k/skiptrace/internal
