@@ -361,7 +361,7 @@ GEM
     yard (0.9.26)
 
 PLATFORMS
-  x86_64-darwin-20
+  ruby
 
 DEPENDENCIES
   aws-sdk-s3
