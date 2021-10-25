@@ -9,5 +9,6 @@ class HomeController < ApplicationController
     @goal = current_user.goals
   end
 
-  def about; end
+  def about
+  end
 end

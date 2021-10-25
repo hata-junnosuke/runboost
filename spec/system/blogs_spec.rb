@@ -6,7 +6,7 @@ RSpec.describe "Blogs", type: :system do
     @user = FactoryBot.create(:user)
   end
 
-  scenario "user creates a new blog" do
+  scenario "ユーザーは新しいブログを作成する" do
     visit new_user_session_path
 
     fill_in "sesstion_email", with: @user.email
