@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_user, { only: %i[edit update destroy] }
 
   def index
     @users = User.page(params[:page]).per(12)
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def ensure_correct_user
     @user = User.find_by(id: params[:id])
     if params[:id].to_i != current_user.id
-      flash[:alert] = "権限がありません"
+      flash[:alert] = '権限がありません'
       redirect_to root_path
     end
   end
