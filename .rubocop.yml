@@ -1,1 +1,57 @@
 inherit_from: .rubocop_todo.yml
+require:
+    - rubocop-performance
+    - rubocop-rails
+    - rubocop-rspec
+
+AllCops:
+    # Rubyバージョン指定
+    TargetRubyVersion: 2.6
+    # 除外
+    Exclude:
+        - 'config.ru'
+        - 'bin/**'
+        - 'lib/**'
+        - 'db/**/*'
+        - 'config/**/*'
+        - 'script/**/*'
+        - !ruby/regexp /old_and_unused\.rb$/
+        - 'vendor/**/*'
+        - 'tmp/**/*'
+
+# 日本語でのコメントを許可
+AsciiComments:
+    Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+    Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+    Enabled: false
+
+# 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
+Style/FrozenStringLiteralComment:
+    Enabled: false
+
+#実行結果 4行以上 の場合にチェックする
+GuardClause:
+    MinBodyLength: 4
+
+#RSpecの例題の長さを15行にする
+RSpec/ExampleLength:
+    Max: 15
+
+#RSpecで動作の記入の制限をなくす
+RSpec/MultipleExpectations:
+    Enabled: false
+
+#RSpecでコールバックを強制しない
+RSpec/InstanceVariable:
+    Enabled: false
+
+#RSpecの記述方法の修正
+RSpec/VoidExpect:
+    Enabled: false
+

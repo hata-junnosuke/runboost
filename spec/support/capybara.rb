@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 # システムスペックがうまくいかないとき、ドライバーを変えて確認する。
-#Capybara.javascript_driver = :selenium_chrome_headless
+# Capybara.javascript_driver = :selenium_chrome_headless
 
 RSpec.configure do |config|
   config.before(:each, type: :system) do
