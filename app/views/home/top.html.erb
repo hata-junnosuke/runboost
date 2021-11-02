@@ -9,7 +9,7 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> 今月の距離</div>
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <%= link_to "今月の距離", new_blog_path %></div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><%= @blogs.this_month.sum(:distance) %> Km</div>
                   </div>
                   <div class="col-auto">
@@ -31,7 +31,7 @@
                                 <% if @goal.this_month.present? %>
                                   <p><%= @goal.this_month.last.distance %> Km<p> 
                                 <% else %>
-                                  <p>目標を設定しましょう！</p>
+                                  <%= link_to "目標を設定しましょう！", goals_path %>
                                 <% end %>
                               </div>
                           </div>
