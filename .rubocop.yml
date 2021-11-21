@@ -48,8 +48,8 @@ RSpec/MultipleExpectations:
     Enabled: false
 
 #RSpecでコールバックを強制しない
-RSpec/InstanceVariable:
-    Enabled: false
+#RSpec/InstanceVariable:
+ #   Enabled: false
 
 #RSpecの記述方法の修正
 RSpec/VoidExpect:
