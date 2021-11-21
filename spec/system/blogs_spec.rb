@@ -2,15 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Blogs', type: :system do
   # ユーザーは新しいブログを作成する
-  before do
-    @user = FactoryBot.create(:user)
-  end
+  let(:user) { FactoryBot.create(:user) }
 
   it 'ユーザーは新しいブログを作成する' do
     visit new_user_session_path
 
-    fill_in 'sesstion_email', with: @user.email
-    fill_in 'sesstion_password', with: @user.password
+    fill_in 'sesstion_email', with: user.email
+    fill_in 'sesstion_password', with: user.password
     click_button 'ログイン'
 
     expect do
@@ -20,7 +18,7 @@ RSpec.describe 'Blogs', type: :system do
       click_button '記録する'
 
       expect(page).to have_content '記録しました。'
-        .to change(@user.blogs, :count).by(1)
+        .to change(user.blogs, :count).by(1)
     end
   end
 end
