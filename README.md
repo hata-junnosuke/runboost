@@ -47,5 +47,16 @@ https://runboost.herokuapp.com/
 - SCSS
 - JavaScript
 - Bootstrap4.1
+
+### インフラ
+- heroku
+- AWS（S3）
+### CI
+- GitHub Actions
+### データベース
+- PostgreSQL
+### 仮想環境（開発環境のみ）
+- docker
+
 # ER図
 [![Image from Gyazo](https://i.gyazo.com/b90e0ea064aea70c93fdee3003728078.png)](https://gyazo.com/b90e0ea064aea70c93fdee3003728078)
