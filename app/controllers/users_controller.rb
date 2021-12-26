@@ -1,8 +1,7 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, { only: %i[edit update destroy] }
+  before_action :ensure_normal_user, only: %i[update destroy]
 
   def index
     @users = User.page(params[:page]).per(12)
@@ -44,5 +43,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :profile, :profie_image_id)
+  end
+
+  def ensure_normal_user
+    if current_user.email == 'guest@guest.com'
+      redirect_to root_path, alert: 'ゲストユーザーは編集・削除できません。'
+    end
   end
 end

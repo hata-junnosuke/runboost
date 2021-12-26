@@ -26,8 +26,17 @@
         <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block" %>
       </div>
     <% end %>
-    
-   
-  
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" } ) do |f| %>
+      <div class="field">
+        <%= f.hidden_field :email, value: "guest@guest.com"%>
+        <%= f.hidden_field :password, value: "guest2021"%>
+      </div>
+
+      <div>
+        <%= f.submit "ゲストログイン(閲覧用)", class: "btn btn-lg btn-warning btn-block" %>
+      </div>
+    <% end %>
+
   </div>
 </div>  
