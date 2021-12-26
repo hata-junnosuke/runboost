@@ -1,0 +1,16 @@
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211226-9912-1ggmwsp.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make DESTDIR\= clean
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make DESTDIR\=
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20211226-9912-ch42yd

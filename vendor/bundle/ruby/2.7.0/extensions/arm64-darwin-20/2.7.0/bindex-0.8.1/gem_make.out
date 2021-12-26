@@ -1,0 +1,16 @@
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211226-9912-bgari8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20211226-9912-qncq7/skiptrace/internal

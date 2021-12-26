@@ -1,0 +1,554 @@
+have_header: checking for ruby/st.h... -------------------- yes
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"clang -E -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/st.h>
+/* end */
+
+--------------------
+
+have_header: checking for st.h... -------------------- yes
+
+"clang -E -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe  conftest.c -o conftest.i"
+In file included from conftest.c:3:
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward/st.h:2:2: warning: use "ruby/st.h" instead of bare "st.h" [-W#warnings]
+#warning use "ruby/st.h" instead of bare "st.h"
+ ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <st.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_str_replace() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_str_replace", referenced from:
+      _t in conftest-b4f9d2.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_str_replace; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_str_replace'
+extern void rb_str_replace();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:824:7: note: previous declaration is here
+VALUE rb_str_replace(VALUE, VALUE);
+      ^
+conftest.c:17:30: error: too few arguments to function call, expected 2, have 0
+int t(void) { rb_str_replace(); return 0; }
+              ~~~~~~~~~~~~~~ ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:824:7: note: 'rb_str_replace' declared here
+VALUE rb_str_replace(VALUE, VALUE);
+      ^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_str_replace();
+17: int t(void) { rb_str_replace(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_intern_str() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_intern_str", referenced from:
+      _t in conftest-ccad7c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_intern_str; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_intern_str'
+extern void rb_intern_str();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1822:4: note: previous declaration is here
+ID rb_intern_str(VALUE str);
+   ^
+conftest.c:17:29: error: too few arguments to function call, single argument 'str' was not specified
+int t(void) { rb_intern_str(); return 0; }
+              ~~~~~~~~~~~~~ ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1822:4: note: 'rb_intern_str' declared here
+ID rb_intern_str(VALUE str);
+   ^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_intern_str();
+17: int t(void) { rb_intern_str(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_enc_interned_str() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:57: error: use of undeclared identifier 'rb_enc_interned_str'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_enc_interned_str", referenced from:
+      _t in conftest-66fd69.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_enc_interned_str();
+17: int t(void) { rb_enc_interned_str(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_sym2str() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_sym2str", referenced from:
+      _t in conftest-e92958.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_sym2str; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_sym2str'
+extern void rb_sym2str();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1827:7: note: previous declaration is here
+VALUE rb_sym2str(VALUE);
+      ^
+conftest.c:17:26: error: too few arguments to function call, expected 1, have 0
+int t(void) { rb_sym2str(); return 0; }
+              ~~~~~~~~~~ ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/ruby.h:1827:7: note: 'rb_sym2str' declared here
+VALUE rb_sym2str(VALUE);
+      ^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_sym2str();
+17: int t(void) { rb_sym2str(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_str_intern() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_str_intern", referenced from:
+      _t in conftest-e08000.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_str_intern; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_str_intern'
+extern void rb_str_intern();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:829:7: note: previous declaration is here
+VALUE rb_str_intern(VALUE);
+      ^
+conftest.c:17:29: error: too few arguments to function call, expected 1, have 0
+int t(void) { rb_str_intern(); return 0; }
+              ~~~~~~~~~~~~~ ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:829:7: note: 'rb_str_intern' declared here
+VALUE rb_str_intern(VALUE);
+      ^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_str_intern();
+17: int t(void) { rb_str_intern(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_block_lambda() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_block_lambda", referenced from:
+      _t in conftest-3a0c53.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_block_lambda; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_block_lambda'
+extern void rb_block_lambda();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:468:7: note: previous declaration is here
+VALUE rb_block_lambda(void);
+      ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_block_lambda();
+17: int t(void) { rb_block_lambda(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_hash_dup() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_hash_dup", referenced from:
+      _t in conftest-9a50ec.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_hash_dup; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_hash_dup'
+extern void rb_hash_dup();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:561:7: note: previous declaration is here
+VALUE rb_hash_dup(VALUE);
+      ^
+conftest.c:17:27: error: too few arguments to function call, expected 1, have 0
+int t(void) { rb_hash_dup(); return 0; }
+              ~~~~~~~~~~~ ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:561:7: note: 'rb_hash_dup' declared here
+VALUE rb_hash_dup(VALUE);
+      ^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_hash_dup();
+17: int t(void) { rb_hash_dup(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_hash_clear() in ruby.h... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_hash_clear", referenced from:
+      _t in conftest-004c3c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_hash_clear; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+conftest.c:16:13: error: conflicting types for 'rb_hash_clear'
+extern void rb_hash_clear();
+            ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:568:7: note: previous declaration is here
+VALUE rb_hash_clear(VALUE);
+      ^
+conftest.c:17:29: error: too few arguments to function call, expected 1, have 0
+int t(void) { rb_hash_clear(); return 0; }
+              ~~~~~~~~~~~~~ ^
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/intern.h:568:7: note: 'rb_hash_clear' declared here
+VALUE rb_hash_clear(VALUE);
+      ^
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_hash_clear();
+17: int t(void) { rb_hash_clear(); return 0; }
+/* end */
+
+--------------------
+

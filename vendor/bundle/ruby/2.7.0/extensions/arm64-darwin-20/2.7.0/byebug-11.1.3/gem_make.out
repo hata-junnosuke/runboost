@@ -1,0 +1,20 @@
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211226-9912-12v9hne.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= clean
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\=
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20211226-9912-1bgh97r/byebug

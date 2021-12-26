@@ -1,0 +1,25 @@
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/ext/puma_http11
+/Users/hatajunnosuke/.rbenv/versions/2.7.2/bin/ruby -I /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211226-9912-150vnk.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/ext/puma_http11
+make DESTDIR\= clean
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/ext/puma_http11
+make DESTDIR\=
+compiling http11_parser.c
+ext/puma_http11/http11_parser.c:44:18: warning: unused variable 'puma_parser_en_main' [-Wunused-const-variable]
+static const int puma_parser_en_main = 1;
+                 ^
+1 warning generated.
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+
+current directory: /Users/hatajunnosuke/RubymineProjects/runboost/runboost/vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/ext/puma_http11
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20211226-9912-1fi37vq/puma

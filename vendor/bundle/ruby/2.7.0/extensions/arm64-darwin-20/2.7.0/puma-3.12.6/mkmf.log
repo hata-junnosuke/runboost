@@ -1,0 +1,115 @@
+have_library: checking for BIO_read() in -lcrypto... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/include -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/include -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7 -lcrypto   "
+conftest.c:14:57: error: use of undeclared identifier 'BIO_read'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/include -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7 -lcrypto   "
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/lib/libruby.2.7.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+ld: warning: ignoring file /Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/lib/libcrypto.dylib, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_BIO_read", referenced from:
+      _t in conftest-b55377.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void BIO_read();
+15: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for BIO_read() in -llibeay32... -------------------- no
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/include -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7 -llibeay32   "
+conftest.c:14:57: error: use of undeclared identifier 'BIO_read'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/arm64-darwin20 -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0/ruby/backward -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include/ruby-2.7.0 -I. -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/include -I/Users/hatajunnosuke/.rbenv/versions/2.7.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/openssl/lib -L. -L/Users/hatajunnosuke/.rbenv/versions/2.7.2/lib  -fstack-protector-strong     -lruby.2.7 -llibeay32   "
+ld: library not found for -llibeay32
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void BIO_read();
+15: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
