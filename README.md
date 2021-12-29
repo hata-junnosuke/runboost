@@ -1,6 +1,6 @@
 # 走りのためのアプリ　「runboost」
 [![Image from Gyazo](https://i.gyazo.com/183a40a6338e499a14b9dc174514c352.png)](https://gyazo.com/183a40a6338e499a14b9dc174514c352)
-[![Image from Gyazo](https://i.gyazo.com/f628937585021d6227d52715c104e627.png)](https://gyazo.com/f628937585021d6227d52715c104e627)
+![img.png](img.png)
 # アプリURL
 https://runboost.herokuapp.com/
 # 対象ユーザ
@@ -37,7 +37,7 @@ https://runboost.herokuapp.com/
 
 # 使用技術
 ### バックエンド
-- Ruby 2.6.3
+- Ruby 2.7.5
 - Rails 5.2.6
 - RSpec 4.1 
 
@@ -46,7 +46,7 @@ https://runboost.herokuapp.com/
 - HTML
 - SCSS
 - JavaScript
-- Bootstrap4.1
+- Bootstrap
 
 ### インフラ
 - heroku
@@ -56,7 +56,7 @@ https://runboost.herokuapp.com/
 ### データベース
 - PostgreSQL
 ### 仮想環境（開発環境のみ）
-- docker
+- Docker
 
 # ER図
 [![Image from Gyazo](https://i.gyazo.com/b90e0ea064aea70c93fdee3003728078.png)](https://gyazo.com/b90e0ea064aea70c93fdee3003728078)
