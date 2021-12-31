@@ -1,5 +1,5 @@
 class Goal < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  # belongs_to :user, dependent: :destroy
 
   validates :distance, presence: true
 

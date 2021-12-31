@@ -1,5 +1,5 @@
 class Blog < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  # belongs_to :user, dependent: :destroy
 
   validates :distance, :content, presence: true
   validates :content, length: { maximum: 255 }
