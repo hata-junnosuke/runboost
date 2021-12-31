@@ -93,5 +93,4 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'mini_magick'
 gem 'momentjs-rails'
-
 gem 'simple_calendar', '~> 2.0'
