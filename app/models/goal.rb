@@ -1,5 +1,4 @@
 class Goal < ApplicationRecord
-  belongs_to :user
   validates :distance, presence: true
 
   scope :this_month, -> { where(date: Time.current.all_month) }
