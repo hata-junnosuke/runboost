@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :username, presence: true, length: {maximum: 15 }
+  validates :username, presence: true, length: { maximum: 15 }
   validates :email, presence: true, length: { maximum: 255 },
-            format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
-            uniqueness: { case_sensitive: false }
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
+                    uniqueness: { case_sensitive: false }
   validates :profile, length: { maximum: 255 }
 
   has_many :blogs, dependent: :destroy
